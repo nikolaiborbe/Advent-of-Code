@@ -12,12 +12,12 @@ def p1():
     tot = 0
     # horizontal
     for i in range(len(lines)):
-        for j in range(len(lines) - 3):
+        for j in range(len(lines[0]) - 3):
             if lines[i][j : j + 4] == "XMAS" or lines[i][j : j + 4] == "SAMX":
                 tot += 1
     # vertical
     for i in range(len(lines) - 3):
-        for j in range(len(lines)):
+        for j in range(len(lines[0])):
             if [lines[i][j], lines[i + 1][j], lines[i + 2][j], lines[i + 3][j]] == [
                 "X",
                 "M",
@@ -32,7 +32,7 @@ def p1():
                 tot += 1
     # diagonal
     for i in range(len(lines) - 3):
-        for j in range(len(lines) - 3):
+        for j in range(len(lines[0]) - 3):
             if [
                 lines[i][j],
                 lines[i + 1][j + 1],
@@ -52,7 +52,7 @@ def p1():
                 tot += 1
     # diagonal
     for i in range(len(lines) - 3):
-        for j in range(3, len(lines)):
+        for j in range(3, len(lines[0])):
             if [
                 lines[i][j],
                 lines[i + 1][j - 1],
@@ -77,7 +77,7 @@ def p1():
 def p2():
     tot = 0
     for i in range(len(lines) - 2):
-        for j in range(len(lines) - 2):
+        for j in range(len(lines[0]) - 2):
             if [
                 lines[i][j],
                 lines[i+1][j+1],
@@ -121,5 +121,5 @@ def p2():
     print(tot)
 
 
-#p1()
+p1()
 p2()

@@ -1,0 +1,19 @@
+import sys
+sys.path.append('/Users/nikolaiborbe/Documents/Programming/Advent-of-Code/src/')
+from aoc_utils import *
+
+#filename = "input"
+#lines = [x.strip() for x in open(filename)]
+#file = open(filename).read()
+
+def p1():
+    pass
+
+def p2():
+    pass
+
+
+
+p1()
+#p2()
+    
