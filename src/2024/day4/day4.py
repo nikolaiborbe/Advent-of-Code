@@ -13,64 +13,29 @@ def p1():
     # horizontal
     for i in range(len(lines)):
         for j in range(len(lines[0]) - 3):
-            if lines[i][j : j + 4] == "XMAS" or lines[i][j : j + 4] == "SAMX":
+            if lines[i][j:j+4] == "XMAS" or lines[i][j:j+4] == "SAMX":
                 tot += 1
     # vertical
     for i in range(len(lines) - 3):
         for j in range(len(lines[0])):
-            if [lines[i][j], lines[i + 1][j], lines[i + 2][j], lines[i + 3][j]] == [
-                "X",
-                "M",
-                "A",
-                "S",
-            ] or [lines[i][j], lines[i + 1][j], lines[i + 2][j], lines[i + 3][j]] == [
-                "S",
-                "A",
-                "M",
-                "X",
-            ]:
+            if lines[i][j] == "X" and lines[i+1][j] == "M" and lines[i+2][j] == "A" and lines[i+3][j] == "S":
                 tot += 1
-    # diagonal
+            elif lines[i][j] == "S" and lines[i+1][j] == "A" and lines[i+2][j] == "M" and lines[i+3][j] == "X":
+                tot += 1
+    # diagonal 1
     for i in range(len(lines) - 3):
         for j in range(len(lines[0]) - 3):
-            if [
-                lines[i][j],
-                lines[i + 1][j + 1],
-                lines[i + 2][j + 2],
-                lines[i + 3][j + 3],
-            ] == ["X", "M", "A", "S"] or [
-                lines[i][j],
-                lines[i + 1][j + 1],
-                lines[i + 2][j + 2],
-                lines[i + 3][j + 3],
-            ] == [
-                "S",
-                "A",
-                "M",
-                "X",
-            ]:
+            if lines[i][j] == "X" and lines[i+1][j+1] == "M" and lines[i+2][j+2] == "A" and lines[i+3][j+3] == "S":
                 tot += 1
-    # diagonal
+            elif lines[i][j] == "S" and lines[i+1][j+1] == "A" and lines[i+2][j+2] == "M" and lines[i+3][j+3] == "X":
+                tot += 1
+    # diagonal 2
     for i in range(len(lines) - 3):
         for j in range(3, len(lines[0])):
-            if [
-                lines[i][j],
-                lines[i + 1][j - 1],
-                lines[i + 2][j - 2],
-                lines[i + 3][j - 3],
-            ] == ["X", "M", "A", "S"] or [
-                lines[i][j],
-                lines[i + 1][j - 1],
-                lines[i + 2][j - 2],
-                lines[i + 3][j - 3],
-            ] == [
-                "S",
-                "A",
-                "M",
-                "X",
-            ]:
+            if lines[i][j] == "X" and lines[i+1][j-1] == "M" and lines[i+2][j-2] == "A" and lines[i+3][j-3] == "S":
                 tot += 1
-
+            elif lines[i][j] == "S" and lines[i+1][j-1] == "A" and lines[i+2][j-2] == "M" and lines[i+3][j-3] == "X":
+                tot += 1
     print(tot)
 
 
@@ -78,48 +43,19 @@ def p2():
     tot = 0
     for i in range(len(lines) - 2):
         for j in range(len(lines[0]) - 2):
-            if [
-                lines[i][j],
-                lines[i+1][j+1],
-                lines[i+2][j+2],
-            ] == ["M", "A", "S"] and [
-                lines[i+2][j],
-                lines[i+1][j+1],
-                lines[i][j+2],
-            ] == ["M", "A", "S"]:
-                tot += 1
-            elif [
-                lines[i][j],
-                lines[i+1][j+1],
-                lines[i+2][j+2],
-            ] == ["S", "A", "M"] and [
-                lines[i+2][j],
-                lines[i+1][j+1],
-                lines[i][j+2],
-            ] == ["S", "A", "M"]:
-                tot += 1
-            elif [
-                lines[i][j],
-                lines[i+1][j+1],
-                lines[i+2][j+2],
-            ] == ["M", "A", "S"] and [
-                lines[i][j+2],
-                lines[i+1][j+1],
-                lines[i+2][j],
-            ] == ["M", "A", "S"]:
-                tot += 1
-            elif [
-                lines[i][j],
-                lines[i+1][j+1],
-                lines[i+2][j+2],
-            ] == ["S", "A", "M"] and [
-                lines[i][j+2],
-                lines[i+1][j+1],
-                lines[i+2][j],
-            ] == ["S", "A", "M"]:
-                tot += 1
+            if (lines[i][j] == "M" and lines[i+1][j+1] == "A" and lines[i+2][j+2] == "S" 
+                and lines[i+2][j] == "M" and lines[i+1][j+1] == "A" and lines[i][j+2] == "S"):
+                    tot += 1
+            elif (lines[i][j] == "S" and lines[i+1][j+1] == "A" and lines[i+2][j+2] == "M"
+                and lines[i+2][j] == "S" and lines[i+1][j+1] == "A" and lines[i][j+2] == "M"):
+                    tot += 1
+            elif (lines[i][j] == "M" and lines[i+1][j+1] == "A" and lines[i+2][j+2] == "S"
+                and lines[i+2][j] == "S" and lines[i+1][j+1] == "A" and lines[i][j+2] == "M"):
+                    tot += 1
+            elif (lines[i][j] == "S" and lines[i+1][j+1] == "A" and lines[i+2][j+2] == "M"
+                and lines[i+2][j] == "M" and lines[i+1][j+1] == "A" and lines[i][j+2] == "S"):
+                    tot += 1
     print(tot)
-
 
 p1()
 p2()
