@@ -3,6 +3,7 @@ import re
 import sys
 import time
 import requests
+import functools
 from collections import Counter
 import pyperclip
 sys.setrecursionlimit(10**6)

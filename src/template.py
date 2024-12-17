@@ -12,9 +12,4 @@ def p1():
 def p2():
     pass
 
-
-#ans = p1()
-#ans = p2()
-
-
-print_(ans) # print and copy answer to clipboard
+print_(p1()) # print and copy answer to clipboard
