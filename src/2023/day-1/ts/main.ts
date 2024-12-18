@@ -1,3 +1,5 @@
+// started on part-2
+
 import { readFileSync } from 'fs';
 
 let input = readFileSync('src/2023/day-1/ts_solution/input.txt', 'utf-8')
