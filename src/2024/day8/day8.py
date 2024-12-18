@@ -1,5 +1,3 @@
-import math
-
 filename = "input"
 lines = [x.strip() for x in open(filename)]
 map = [[x for x in line] for line in lines]
